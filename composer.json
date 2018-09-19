@@ -1,0 +1,54 @@
+{
+    "name": "mvdnbrk/laravel-postmark-webhooks",
+    "type": "library",
+    "description": "Handle Postmark webhooks in a Laravel application.",
+    "keywords": [
+        "mvdnbrk",
+        "Laravel",
+        "Postmark",
+        "webhook",
+        "e-mail"
+    ],
+    "homepage": "https://github.com/mvdnbrk/laravel-postmark-webhooks",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mark van den Broek",
+            "email": "mvdnbrk@gmail.com",
+            "homepage": "https://github.com/mvdnbrk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.5.0|~5.6.0|~5.7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
+        "phpunit/phpunit": "^7.3",
+        "squizlabs/php_codesniffer": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mvdnbrk\\PostmarkWebhooks\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Mvdnbrk\\PostmarkWebhooks\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
