@@ -58,14 +58,14 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/mvdnbrk/laravel-postmark-webhooks/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
-[ico-style-ci]: https://styleci.io/repos/9999/shield?branch=master
+[ico-style-ci]: https://styleci.io/repos/149487979/shield?branch=master
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/mvdnbrk/laravel-postmark-webhooks
 [link-travis]: https://travis-ci.org/mvdnbrk/laravel-postmark-webhooks
 [link-scrutinizer]: https://scrutinizer-ci.com/g/mvdnbrk/laravel-postmark-webhooks/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/mvdnbrk/laravel-postmark-webhooks
-[link-style-ci]: https://styleci.io/repos/9999
+[link-style-ci]: https://styleci.io/repos/149487979
 [link-downloads]: https://packagist.org/packages/mvdnbrk/laravel-postmark-webhooks
 [link-author]: https://github.com/mvdnbrk
 [link-contributors]: ../../contributors
