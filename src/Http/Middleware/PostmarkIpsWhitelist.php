@@ -30,6 +30,6 @@ class PostmarkIpsWhitelist
             return $next($request);
         }
 
-        return response('Unauthorized', 401);
+        return response()->json(['error' => 'Unauthorized'], 401);
     }
 }
