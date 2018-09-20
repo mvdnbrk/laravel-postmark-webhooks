@@ -1,6 +1,6 @@
 <?php
 
-namespace Mvdnbrk\PostmarkWebhooks\Tests;
+namespace Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhooksServiceProvider;
