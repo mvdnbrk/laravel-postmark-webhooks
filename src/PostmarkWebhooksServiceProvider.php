@@ -7,18 +7,21 @@ use Illuminate\Support\ServiceProvider;
 class PostmarkWebhooksServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
-    /**
      * Boot the service provider.
      *
      * @return void
      */
     public function boot()
+    {
+        $this->loadRoutesFrom(__DIR__.'/routes.php');
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
     {
         //
     }
