@@ -24,6 +24,7 @@
         "illuminate/support": "~5.5.0|~5.6.0|~5.7.0"
     },
     "require-dev": {
+        "nunomaduro/collision": "^2.0",
         "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0",
         "phpunit/phpunit": "^7.3",
         "squizlabs/php_codesniffer": "^3.3"
