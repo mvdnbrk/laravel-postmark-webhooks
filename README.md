@@ -11,7 +11,7 @@
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Postmark can send out several webhooks to *your* application when an event occurs.  
-This way Postmark is able to immediately notify you when something new occured.
+This way Postmark is able to immediately notify you when something new occurs.
 
 This package can help you handle those webhooks.
 
