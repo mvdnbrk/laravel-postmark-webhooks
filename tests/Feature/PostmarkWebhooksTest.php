@@ -46,7 +46,7 @@ class PostmarkWebhooksTest extends TestCase
         });
 
         Event::assertDispatched('postmark.webhooks:some_type', function ($event, $eventPayload) use ($payload) {
-            return $payload === $eventPayload;
+            return $payload === json_decode($eventPayload, true);
         });
     }
 
