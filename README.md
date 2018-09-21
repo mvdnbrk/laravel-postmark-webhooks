@@ -10,6 +10,11 @@
 [![StyleCI][ico-style-ci]][link-style-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
+Postmark can send out several webhooks to *your* application when an event occurs.  
+This way Postmark is able to immediately notify you when something new occured.
+
+This package can help you handle those webhooks.
+
 ## Installation
 
 You can install the package via composer:
