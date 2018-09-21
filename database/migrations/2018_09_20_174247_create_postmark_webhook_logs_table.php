@@ -17,7 +17,7 @@ class CreatePostmarkWebhookLogsTable extends Migration
             $table->string('message_id', 100);
             $table->string('record_type');
             $table->json('payload');
-            $table->timestamps();
+            $table->date('created_at');
         });
     }
 

@@ -18,7 +18,6 @@ class MigrationTest extends TestCase
             'record_type',
             'payload',
             'created_at',
-            'updated_at',
         ], $columns);
     }
 }
