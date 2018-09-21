@@ -23,6 +23,12 @@ You can install the package via composer:
 $ composer require mvdnbrk/laravel-postmark-webhooks
 ```
 
+Run the migratios:
+
+``` bash
+php artisan migrate
+```
+
 The service provider will automatically register itself.
 
 ## Usage
