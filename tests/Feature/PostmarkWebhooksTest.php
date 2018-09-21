@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Event;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog;
+use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 
 class PostmarkWebhooksTest extends TestCase
 {
@@ -45,8 +46,9 @@ class PostmarkWebhooksTest extends TestCase
             $this->assertEquals($payload, $log->payload);
         });
 
-        Event::assertDispatched('postmark.webhooks:some_type', function ($event, $eventPayload) use ($payload) {
-            return $payload === $eventPayload;
+        Event::assertDispatched(PostmarkWebhookCalled::class, function ($event) {
+            return $event->messageId === '123456789'
+                && $event->recordType === 'some_type';
         });
     }
 
@@ -61,6 +63,6 @@ class PostmarkWebhooksTest extends TestCase
 
         $this->assertCount(0, PostmarkWebhookLog::all());
 
-        Event::assertNotDispatched('postmark.webhooks:open');
+        Event::assertNotDispatched(PostmarkWebhookCalled::class);
     }
 }

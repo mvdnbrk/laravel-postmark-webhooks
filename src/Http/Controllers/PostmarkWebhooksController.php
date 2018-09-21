@@ -5,6 +5,7 @@ namespace Mvdnbrk\PostmarkWebhooks\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog;
+use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 use Mvdnbrk\PostmarkWebhooks\Http\Middleware\PostmarkIpsWhitelist;
 
 class PostmarkWebhooksController extends Controller
@@ -38,7 +39,11 @@ class PostmarkWebhooksController extends Controller
             'payload' => $payload->all(),
         ]);
 
-        event('postmark.webhooks:'.snake_case($payload->get('RecordType')), $payload->all());
+        event(new PostmarkWebhookCalled(
+            snake_case($payload->get('RecordType')),
+            $payload->get('MessageID'),
+            $payload->all()
+        ));
 
         return response()->json()->setStatusCode(202);
     }
