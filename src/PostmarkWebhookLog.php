@@ -13,4 +13,11 @@ class PostmarkWebhookLog extends Model
      * @var string
      */
     const UPDATED_AT = null;
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
 }
