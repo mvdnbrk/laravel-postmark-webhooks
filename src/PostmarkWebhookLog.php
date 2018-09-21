@@ -15,6 +15,15 @@ class PostmarkWebhookLog extends Model
     const UPDATED_AT = null;
 
     /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'payload' => 'array',
+    ];
+
+    /**
      * The attributes that aren't mass assignable.
      *
      * @var array
