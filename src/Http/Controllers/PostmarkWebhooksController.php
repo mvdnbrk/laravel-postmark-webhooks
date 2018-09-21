@@ -38,7 +38,7 @@ class PostmarkWebhooksController extends Controller
             'payload' => $payload->all(),
         ]);
 
-        event('postmark.webhooks:'.snake_case($payload->get('RecordType')), $payload->toJson());
+        event('postmark.webhooks:'.snake_case($payload->get('RecordType')), $payload->all());
 
         return response()->json()->setStatusCode(202);
     }
