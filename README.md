@@ -49,6 +49,8 @@ If you discover any security related issues, please email mvdnbrk@gmail.com inst
 - [Mark van den Broek][link-author]
 - [All Contributors][link-contributors]
 
+Inspired by [Laravel Stripe Webooks](https://github.com/spatie/laravel-stripe-webhooks) from [Spatie](https://spatie.be/).
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
