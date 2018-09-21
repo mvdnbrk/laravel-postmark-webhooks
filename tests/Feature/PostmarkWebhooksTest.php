@@ -3,7 +3,6 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
-use Illuminate\Routing\Router;
 
 class PostmarkWebhooksTest extends TestCase
 {
