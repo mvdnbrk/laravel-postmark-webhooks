@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostmarkWebhooksTable extends Migration
+class CreatePostmarkWebhookLogsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreatePostmarkWebhooksTable extends Migration
      */
     public function up()
     {
-        Schema::create('postmark_webhooks', function (Blueprint $table) {
+        Schema::create('postmark_webhook_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('message_id', 100);
             $table->string('record_type');
@@ -28,6 +28,6 @@ class CreatePostmarkWebhooksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postmark_webhooks');
+        Schema::dropIfExists('postmark_webhook_logs');
     }
 }
