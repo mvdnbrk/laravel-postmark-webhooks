@@ -4,6 +4,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [1.0.0] - 2018-09-22
+
 ### Added
 - Added dispatching of different event types. [`6a90992`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/6a9099266e8b71e565d3bedb6e171c09b6a8387f)
 - Added the email address to the events and to the logs table. [`ba94bfa`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/ba94bfa9ad09d1cf7eff0cff946b65ae8122fd6a)
@@ -22,7 +24,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Pre-release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.1...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.1...v1.0.0
 [0.2.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/tree/v0.1.0
