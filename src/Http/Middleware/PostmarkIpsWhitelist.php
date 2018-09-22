@@ -13,6 +13,7 @@ class PostmarkIpsWhitelist
      * @var array
      */
     private $ips = [
+        '127.0.0.1',
         '50.31.156.6',
         '50.31.156.77',
     ];
