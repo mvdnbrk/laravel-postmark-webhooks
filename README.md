@@ -20,7 +20,7 @@ This package can help you handle those webhooks.
 You can install the package via composer:
 
 ``` bash
-$ composer require mvdnbrk/laravel-postmark-webhooks
+composer require mvdnbrk/laravel-postmark-webhooks
 ```
 
 The service provider will automatically register itself.
@@ -58,6 +58,53 @@ The ID Postmark assigned to the original message will be saved in the `message_i
 the event type will be stored in the `record_type` column.
 > Note that event types will be converted to `snake_case`.  
 For example `SpamComplaint` will be saved as `spam_complaint`.
+
+### Events
+
+Whenever a webhook call comes in, this package will fire a `PostmarkWebhookCalled` event.
+You may register an event listener in the `EventServiceProvider`:
+
+```php
+/**
+ * The event listener mappings for the application.
+ *
+ * @var array
+ */
+protected $listen = [
+    PostmarkWebhookCalled::class => [
+        YourListener::class,
+    ],
+];
+```
+
+Example of a listener:
+
+```php
+<?php
+
+namespace App\Listeners;
+
+use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
+
+class YourListener
+{
+    /**
+     * Handle the event.
+     *
+     * @param  \Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled  $event
+     * @return void
+     */
+    public function handle(PostmarkWebhookCalled $event)
+    {
+        // Do your work here.
+        
+        // You can access the payload here with: $event->payload.
+        // The message ID and record type are also available:
+        // $event->messageId and $event->recordType.
+    }
+}
+
+```
 
 ## Change log
 
