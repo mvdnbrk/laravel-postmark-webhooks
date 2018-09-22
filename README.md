@@ -49,9 +49,14 @@ This package protects your webhook automatically by only allowing requests from 
 
 ## Usage
 
-``` php
+Postmark can send out several event types by posting a webhook.  
+You can find the [full list of webhooks](https://postmarkapp.com/developer/webhooks/webhooks-overview) in the Postmark documentation.
 
-```
+All webhook requests will be logged in the `postmark_webhook_logs` table.  
+The table has a payload column where the entire payload of the incoming webhook is saved.  
+The ID Postmark assigned to the original message will be stored in the `message_id` column,  
+the event type will be stored in the `record_type` column.
+> Note that event types will be converted to `snake_case`. For example `SpamComplaint` will be stored as `spam_complaint`.
 
 ## Change log
 
