@@ -61,7 +61,7 @@ For example `SpamComplaint` will be saved as `spam_complaint`.
 
 ### Events
 
-Whenever a webhook call comes in, this package will fire a `PostmarkWebhookCalled` event.
+Whenever a webhook call comes in, this package will fire a `PostmarkWebhookCalled` event.  
 You may register an event listener in the `EventServiceProvider`:
 
 ```php
@@ -118,7 +118,7 @@ $ composer test
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
