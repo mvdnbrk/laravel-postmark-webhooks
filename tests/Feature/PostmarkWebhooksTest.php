@@ -50,6 +50,15 @@ class PostmarkWebhooksTest extends TestCase
             return $event->messageId === '123456789'
                 && $event->recordType === 'some_type';
         });
+
+        Event::assertDispatched('webhook.postmark: some_type', function ($event, $eventPayload) {
+            if (! $eventPayload instanceof PostmarkWebhookCalled) {
+                return false;
+            }
+
+            return $eventPayload->messageId === '123456789'
+                && $eventPayload->recordType === 'some_type';
+        });
     }
 
     /** @test */

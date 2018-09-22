@@ -106,6 +106,28 @@ class YourListener
 
 ```
 
+You may also register an event listener for a specific type of event:
+
+```php
+/**
+ * The event listener mappings for the application.
+ *
+ * @var array
+ */
+protected $listen = [
+    'webhook.postmark: spam_complaint' => [
+        YourSpamComplaintListener::class,
+    ],
+];
+```
+
+Available events:
+- open
+- bounce
+- click
+- delivery
+- spam_complaint
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.

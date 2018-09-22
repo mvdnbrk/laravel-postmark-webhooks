@@ -24,7 +24,7 @@ class PostmarkWebhooksController extends Controller
     }
 
     /**
-     * Store the result of a Postmark webhook.
+     * Store the result of a Postmark webhook and fire events.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -33,17 +33,23 @@ class PostmarkWebhooksController extends Controller
     {
         $payload = collect($request->input());
 
+        $messageId = $payload->get('MessageID');
+        $recordType = snake_case($payload->get('RecordType'));
+
         PostmarkWebhookLog::create([
-            'message_id' => $payload->get('MessageID'),
-            'record_type' => snake_case($payload->get('RecordType')),
+            'message_id' => $messageId,
+            'record_type' => $recordType,
             'payload' => $payload->all(),
         ]);
 
-        event(new PostmarkWebhookCalled(
-            snake_case($payload->get('RecordType')),
-            $payload->get('MessageID'),
+        tap(new PostmarkWebhookCalled(
+            $recordType,
+            $messageId,
             $payload->all()
-        ));
+        ), function ($event) use ($recordType) {
+            event($event);
+            event("webhook.postmark: {$recordType}", $event);
+        });
 
         return response()->json()->setStatusCode(202);
     }
