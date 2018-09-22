@@ -23,13 +23,28 @@ You can install the package via composer:
 $ composer require mvdnbrk/laravel-postmark-webhooks
 ```
 
-Run the migratios:
+The service provider will automatically register itself.
+
+Run the migrations to create a `postmark_webhook_logs` table in the database:
 
 ``` bash
 php artisan migrate
 ```
 
-The service provider will automatically register itself.
+## Setup webhooks with Postmark
+
+Visit the [servers](https://account.postmarkapp.com/servers) page on your [Postmark account](https://account.postmarkapp.com/).
+Choose the server you want to setup webhooks for. Go to `settings` > `webhooks` > `add webbook`.
+
+This package will register a route where Postmark can post the webhook to: `/api/webhooks/postmark`.  
+Fill in the full url to as the webhook url:   
+`https://*your-domain.com*/api/webhooks/postmark`  
+Pick the events Postmark should send to you.
+Save the webhook and you are ready to receive webhook notifications from Postmark!
+
+## Protection of your webhook
+
+This package protects your webhook automatically by only allowing requests from the [IP range](https://postmarkapp.com/support/article/800-ips-for-firewalls) that Postmark uses.
 
 ## Usage
 
