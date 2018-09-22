@@ -35,14 +35,20 @@ class PostmarkWebhooksController extends Controller
 
         $messageId = $payload->get('MessageID');
         $recordType = snake_case($payload->get('RecordType'));
+        $email = collect([
+            'bounce' => $payload->get('Email'),
+            'spam_complaint' => $payload->get('Email'),
+        ])->get($recordType, $payload->get('Recipient'));
 
         PostmarkWebhookLog::create([
+            'email' => $email,
             'message_id' => $messageId,
             'record_type' => $recordType,
             'payload' => $payload->all(),
         ]);
 
         tap(new PostmarkWebhookCalled(
+            $email,
             $recordType,
             $messageId,
             $payload->all()

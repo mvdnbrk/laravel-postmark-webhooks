@@ -19,6 +19,7 @@ class CreatePostmarkWebhookLogTest extends TestCase
         ];
 
         PostmarkWebhookLog::create([
+            'email' => 'john@example.com',
             'message_id' => '9999-9999-9999-9999-9999',
             'record_type' => 'open',
             'payload' => json_encode($payload),

@@ -5,6 +5,13 @@ namespace Mvdnbrk\PostmarkWebhooks\Events;
 class PostmarkWebhookCalled
 {
     /**
+     * The email address.
+     *
+     * @var string
+     */
+    public $email;
+
+    /**
      * The record type.
      *
      * @var string
@@ -33,8 +40,9 @@ class PostmarkWebhookCalled
      * @param array  $payload
      * @return void
      */
-    public function __construct($recordType, $messageId, $payload)
+    public function __construct($email, $recordType, $messageId, $payload)
     {
+        $this->email = $email;
         $this->recordType = $recordType;
         $this->messageId = $messageId;
         $this->payload = $payload;

@@ -53,9 +53,9 @@ Postmark can send out several event types by posting a webhook.
 You can find the [full list of webhooks](https://postmarkapp.com/developer/webhooks/webhooks-overview) in the Postmark documentation.
 
 All webhook requests will be logged in the `postmark_webhook_logs` table.  
-The table has a payload column where the entire payload of the incoming webhook is saved.  
+The table has a `payload` column where the entire payload of the incoming webhook is saved.  
 The ID Postmark assigned to the original message will be saved in the `message_id` column,  
-the event type will be stored in the `record_type` column.
+the event type will be stored in the `record_type` column and the email adress as well in the `email` column.
 > Note that event types will be converted to `snake_case`.  
 For example `SpamComplaint` will be saved as `spam_complaint`.
 
@@ -99,8 +99,10 @@ class YourListener
         // Do your work here.
         
         // You can access the payload here with: $event->payload.
-        // The message ID and record type are also available:
-        // $event->messageId and $event->recordType.
+        // The email address, message ID and record type are also available:
+        // $event->email
+        // $event->messageId
+        // $event->recordType
     }
 }
 
