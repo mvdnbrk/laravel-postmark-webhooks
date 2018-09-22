@@ -34,11 +34,12 @@ php artisan migrate
 ## Setup webhooks with Postmark
 
 Visit the [servers](https://account.postmarkapp.com/servers) page on your [Postmark account](https://account.postmarkapp.com/).
-Choose the server you want to setup webhooks for. Go to `settings` > `webhooks` > `add webbook`.
+Choose the server you want to setup webhooks for.  
+Go to `settings` > `webhooks` > `add webbook`.  
 
-This package will register a route where Postmark can post the webhook to: `/api/webhooks/postmark`.  
-Fill in the full url to as the webhook url:   
-`https://*your-domain.com*/api/webhooks/postmark`  
+This package will register a route where Postmark can post their webhooks to: `/api/webhooks/postmark`.
+  
+Fill in your webhook URL: `https://<your-domain.com>/api/webhooks/postmark`  
 Pick the events Postmark should send to you.
 Save the webhook and you are ready to receive webhook notifications from Postmark!
 
