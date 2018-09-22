@@ -15,9 +15,9 @@ class CreatePostmarkWebhookLogsTable extends Migration
         Schema::create('postmark_webhook_logs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('message_id', 100);
-            $table->string('record_type');
+            $table->string('record_type', 32);
             $table->json('payload');
-            $table->date('created_at');
+            $table->dateTime('created_at');
         });
     }
 
