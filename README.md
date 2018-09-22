@@ -38,10 +38,10 @@ Choose the server you want to setup webhooks for.
 Go to `settings` > `webhooks` > `add webbook`.  
 
 This package will register a route where Postmark can post their webhooks to: `/api/webhooks/postmark`.
-  
+
 Fill in your webhook URL: `https://<your-domain.com>/api/webhooks/postmark`  
-Pick the events Postmark should send to you.
-Save the webhook and you are ready to receive webhook notifications from Postmark!
+Pick the events Postmark should send to you and save the webhook.  
+You are ready to receive webhook notifications from Postmark!
 
 ## Protection of your webhook
 
