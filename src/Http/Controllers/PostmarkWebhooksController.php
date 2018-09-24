@@ -41,7 +41,9 @@ class PostmarkWebhooksController extends Controller
         ])->get($recordType, $payload->get('Recipient'));
 
         if (config('postmark-webhooks.log.enabled')) {
-            PostmarkWebhookLog::create([
+            $model = config('postmark-webhooks.log.model');
+
+            $model::create([
                 'email' => $email,
                 'message_id' => $messageId,
                 'record_type' => $recordType,
