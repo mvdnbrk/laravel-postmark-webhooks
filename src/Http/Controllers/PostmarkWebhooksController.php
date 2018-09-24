@@ -43,6 +43,11 @@ class PostmarkWebhooksController extends Controller
         ), function ($event) use ($postmarkWebhook) {
             event($event);
             event("webhook.postmark: {$postmarkWebhook->record_type}", $event);
+
+            $dispatchEvent = config("postmark-webhooks.events.{$postmarkWebhook->record_type}");
+            if ($dispatchEvent) {
+                event(new $dispatchEvent($event));
+            }
         });
 
         return response()->json()->setStatusCode(202);

@@ -27,4 +27,18 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Event mapping
+    |--------------------------------------------------------------------------
+    |
+    | This option allows you to map Postmark webhook
+    | events to your own object-based events.
+    |
+    */
+
+    'events' => [
+
+    ],
+
 ];
