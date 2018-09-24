@@ -4,6 +4,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [1.1.0] - 2018-09-24
+
 ### Added
 
 - Added an option to exclude event types from being logged to the database. [`49a886d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/49a886d92de276d146b6c06120b7ab1437bab55b)
@@ -34,8 +36,9 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Pre-release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.1...v1.0.0
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.0...v1.0.0
 [0.2.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/tree/v0.1.0
