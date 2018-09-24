@@ -81,6 +81,19 @@ class PostmarkWebhooksTest extends TestCase
     }
 
     /** @test */
+    public function it_does_not_log_to_the_database_if_the_record_type_is_configured_to_be_excepted()
+    {
+        config(['postmark-webhooks.log.except' => ['open']]);
+
+        $response = $this->postJson('/api/webhooks/postmark', $this->validPayload([
+            'RecordType' => 'Open',
+        ]));
+
+        $response->assertStatus(202);
+        $this->assertCount(0, PostmarkWebhookLog::all());
+    }
+
+    /** @test */
     public function event_type_of_bounce_uses_the_email_field_instead_of_recipient()
     {
         $response = $this->postJson('/api/webhooks/postmark', [
