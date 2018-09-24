@@ -4,6 +4,9 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+### Changed
+- Code refactor. [`f438b3a`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/f438b3a0e4fe0eb5f05e6e79fc63d7f76de8e990)
+
 ## [1.1.0] - 2018-09-24
 
 ### Added
