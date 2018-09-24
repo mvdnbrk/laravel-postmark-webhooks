@@ -70,7 +70,7 @@ class PostmarkWebhooksTest extends TestCase
     }
 
     /** @test */
-    public function if_logging_is_not_enabled_nothing_will_be_saved_to_the_database()
+    public function it_does_not_log_to_the_database_if_this_is_configured_to_be_disabled()
     {
         config(['postmark-webhooks.log.enabled' => false]);
 
