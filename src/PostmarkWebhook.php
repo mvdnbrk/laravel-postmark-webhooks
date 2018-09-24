@@ -24,13 +24,6 @@ class PostmarkWebhook extends Model
     ];
 
     /**
-     * The attributes that aren't mass assignable.
-     *
-     * @var array
-     */
-    protected $guarded = [];
-
-    /**
      * Create a new model instance..
      *
      * @param  array  $attributes
@@ -41,5 +34,36 @@ class PostmarkWebhook extends Model
         $this->table = config('postmark-webhooks.log.table');
 
         parent::__construct($attributes);
+    }
+
+    /**
+     * Create a new model in the database.
+     * If logging to the database is disabled
+     * or the event type is excluded from logging
+     * we will return a fresh instance.
+     *
+     * @param  array  $payload
+     * @return \Mvdnbrk\PostmarkWebhooks\PostmarkWebook
+     */
+    public static function createOrNewfromPayload($payload)
+    {
+        $payload = collect($payload);
+
+        $recordType = snake_case($payload->get('RecordType'));
+
+        $model = (new static)->forceFill([
+            'email' => $payload->get('Recipient', $payload->get('Email')),
+            'message_id' => $payload->get('MessageID'),
+            'record_type' => $recordType,
+            'payload' => $payload->all(),
+        ]);
+
+        if (config('postmark-webhooks.log.enabled')
+            && ! collect(config('postmark-webhooks.log.except'))->contains($recordType)
+        ) {
+            $model->save();
+        }
+
+        return $model;
     }
 }

@@ -31,36 +31,18 @@ class PostmarkWebhooksController extends Controller
      */
     public function store(Request $request)
     {
-        $payload = collect($request->input());
+        $model = config('postmark-webhooks.log.model');
 
-        $messageId = $payload->get('MessageID');
-        $recordType = snake_case($payload->get('RecordType'));
-        $email = collect([
-            'bounce' => $payload->get('Email'),
-            'spam_complaint' => $payload->get('Email'),
-        ])->get($recordType, $payload->get('Recipient'));
-
-        if (config('postmark-webhooks.log.enabled')
-            && ! collect(config('postmark-webhooks.log.except'))->contains($recordType)
-        ) {
-            $model = config('postmark-webhooks.log.model');
-
-            $model::create([
-                'email' => $email,
-                'message_id' => $messageId,
-                'record_type' => $recordType,
-                'payload' => $payload->all(),
-            ]);
-        }
+        $postmarkWebhook = $model::createOrNewfromPayload($request->input());
 
         tap(new PostmarkWebhookCalled(
-            $email,
-            $recordType,
-            $messageId,
-            $payload->all()
-        ), function ($event) use ($recordType) {
+            $postmarkWebhook->email,
+            $postmarkWebhook->record_type,
+            $postmarkWebhook->message_id,
+            $postmarkWebhook->payload
+        ), function ($event) use ($postmarkWebhook) {
             event($event);
-            event("webhook.postmark: {$recordType}", $event);
+            event("webhook.postmark: {$postmarkWebhook->record_type}", $event);
         });
 
         return response()->json()->setStatusCode(202);
