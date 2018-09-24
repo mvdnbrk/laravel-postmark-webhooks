@@ -7,19 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class PostmarkWebhook extends Model
 {
     /**
-     * Create a new model instance..
-     *
-     * @param  array  $attributes
-     * @return void
-     */
-    public function __construct(array $attributes = [])
-    {
-        $this->table = config('postmark-webhooks.log.table');
-
-        parent::__construct($attributes);
-    }
-
-    /**
      * The name of the "updated at" column.
      * Set to null to disable this column.
      *
@@ -42,4 +29,17 @@ class PostmarkWebhook extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * Create a new model instance..
+     *
+     * @param  array  $attributes
+     * @return void
+     */
+    public function __construct(array $attributes = [])
+    {
+        $this->table = config('postmark-webhooks.log.table');
+
+        parent::__construct($attributes);
+    }
 }
