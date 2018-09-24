@@ -10,12 +10,6 @@ return [
     | Logging events to the database is enabled by default. You may set this
     | to false if you don't want to log the Postmark events to the database.
     |
-    | If you wish to use a different table name you spcecify that here as
-    | well.
-    |
-    | If you would like to use your own model you should extend the
-    | Mvdnbrk\PostmarkWebhooks\PostmarkWebhook model.
-    |
     | You may specify one or more event types to be excluded from being
     | logged to the database. You can place them under the except key.
     |
