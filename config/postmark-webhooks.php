@@ -17,7 +17,7 @@ return [
     | Mvdnbrk\PostmarkWebhooks\PostmarkWebhook model.
     |
     | You may specify one or more event types to be excluded from being
-    | logged to the databse. You can place them under the except key.
+    | logged to the database. You can place them under the except key.
     |
     | Supported event types: "open", "bounce", "click",
     | "delivery", "spam_complaint"
