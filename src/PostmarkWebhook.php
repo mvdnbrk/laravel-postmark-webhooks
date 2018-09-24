@@ -4,7 +4,7 @@ namespace Mvdnbrk\PostmarkWebhooks;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostmarkWebhookLog extends Model
+class PostmarkWebhook extends Model
 {
     /**
      * Create a new model instance..

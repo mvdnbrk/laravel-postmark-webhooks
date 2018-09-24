@@ -14,7 +14,7 @@ return [
     | well.
     |
     | If you would like to use your own model you should extend the
-    | Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog model.
+    | Mvdnbrk\PostmarkWebhooks\PostmarkWebhook model.
     |
     | You may specify one or more event types to be excluded from being
     | logged to the databse. You can place them under the except key.
@@ -27,7 +27,7 @@ return [
     'log' => [
         'enabled' => env('POSTMARK_WEBHOOKS_LOG_ENABLED', true),
         'table' => 'postmark_webhook_logs',
-        'model' => Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog::class,
+        'model' => Mvdnbrk\PostmarkWebhooks\PostmarkWebhook::class,
         'except' => [
 
         ],

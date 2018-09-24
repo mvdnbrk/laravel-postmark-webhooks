@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use Illuminate\Support\Facades\Event;
-use Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog;
+use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 
@@ -43,9 +43,9 @@ class PostmarkWebhooksTest extends TestCase
 
         $response->assertStatus(202);
 
-        $this->assertCount(1, PostmarkWebhookLog::all());
+        $this->assertCount(1, PostmarkWebhook::all());
 
-        tap(PostmarkWebhookLog::first(), function ($log) use ($payload) {
+        tap(PostmarkWebhook::first(), function ($log) use ($payload) {
             $this->assertEquals('jane@example.com', $log->email);
             $this->assertEquals('123456789', $log->message_id);
             $this->assertEquals('some_type', $log->record_type);
@@ -77,7 +77,7 @@ class PostmarkWebhooksTest extends TestCase
         $response = $this->postJson('/api/webhooks/postmark', $this->validPayload());
 
         $response->assertStatus(202);
-        $this->assertCount(0, PostmarkWebhookLog::all());
+        $this->assertCount(0, PostmarkWebhook::all());
     }
 
     /** @test */
@@ -90,7 +90,7 @@ class PostmarkWebhooksTest extends TestCase
         ]));
 
         $response->assertStatus(202);
-        $this->assertCount(0, PostmarkWebhookLog::all());
+        $this->assertCount(0, PostmarkWebhook::all());
     }
 
     /** @test */
@@ -104,7 +104,7 @@ class PostmarkWebhooksTest extends TestCase
 
         $response->assertStatus(202);
 
-        tap(PostmarkWebhookLog::first(), function ($log) {
+        tap(PostmarkWebhook::first(), function ($log) {
             $this->assertEquals('jane@example.com', $log->email);
         });
 
@@ -124,7 +124,7 @@ class PostmarkWebhooksTest extends TestCase
 
         $response->assertStatus(202);
 
-        tap(PostmarkWebhookLog::first(), function ($log) {
+        tap(PostmarkWebhook::first(), function ($log) {
             $this->assertEquals('jane@example.com', $log->email);
         });
 
@@ -140,7 +140,7 @@ class PostmarkWebhooksTest extends TestCase
 
         $response->assertStatus(401);
 
-        $this->assertCount(0, PostmarkWebhookLog::all());
+        $this->assertCount(0, PostmarkWebhook::all());
 
         Event::assertNotDispatched(PostmarkWebhookCalled::class);
         Event::assertNotDispatched('webhook.postmark:*');

@@ -3,10 +3,10 @@
 namespace Tests\Database;
 
 use Tests\TestCase;
-use Mvdnbrk\PostmarkWebhooks\PostmarkWebhookLog;
+use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-class CreatePostmarkWebhookLogTest extends TestCase
+class CreatePostmarkWebhookTest extends TestCase
 {
     use RefreshDatabase;
 
@@ -18,14 +18,14 @@ class CreatePostmarkWebhookLogTest extends TestCase
             'FirstOpen' => true,
         ];
 
-        PostmarkWebhookLog::create([
+        PostmarkWebhook::create([
             'email' => 'john@example.com',
             'message_id' => '9999-9999-9999-9999-9999',
             'record_type' => 'open',
             'payload' => json_encode($payload),
         ]);
 
-        tap(PostmarkWebhookLog::first(), function ($log) use ($payload) {
+        tap(PostmarkWebhook::first(), function ($log) use ($payload) {
             $this->assertEquals('9999-9999-9999-9999-9999', $log->message_id);
             $this->assertEquals('open', $log->record_type);
             $this->assertJson($log->payload);
