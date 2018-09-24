@@ -40,12 +40,14 @@ class PostmarkWebhooksController extends Controller
             'spam_complaint' => $payload->get('Email'),
         ])->get($recordType, $payload->get('Recipient'));
 
-        PostmarkWebhookLog::create([
-            'email' => $email,
-            'message_id' => $messageId,
-            'record_type' => $recordType,
-            'payload' => $payload->all(),
-        ]);
+        if (config('postmark-webhooks.log.enabled')) {
+            PostmarkWebhookLog::create([
+                'email' => $email,
+                'message_id' => $messageId,
+                'record_type' => $recordType,
+                'payload' => $payload->all(),
+            ]);
+        }
 
         tap(new PostmarkWebhookCalled(
             $email,

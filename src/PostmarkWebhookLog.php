@@ -9,11 +9,14 @@ class PostmarkWebhookLog extends Model
     /**
      * Create a new model instance..
      *
+     * @param  array  $attributes
      * @return void
      */
-    public function __construct()
+    public function __construct(array $attributes = [])
     {
         $this->table = config('postmark-webhooks.log.table');
+
+        parent::__construct($attributes);
     }
 
     /**
