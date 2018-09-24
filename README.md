@@ -25,7 +25,7 @@ composer require mvdnbrk/laravel-postmark-webhooks
 
 The service provider will automatically register itself.
 
-This package will log all incoming webhooks to the database by default.
+This package will log all incoming webhooks to the database by default.  
 Run the migrations to create a `postmark_webhook_logs` table in the database:
 
 ``` bash
@@ -145,7 +145,7 @@ or the Eloquent model being used to save log records to the database.
 > If you want to use your own model to save the logs to the database you should extend
 the `Mvdnbrk\PostmarkWebhooks\PostmarkWebhook` class.
 
-You can also exclude one or more event types from being logged to the databse.
+You can also exclude one or more event types from being logged to the databse.  
 Place the events you want to exclude under the `except` key:
 
 ```
