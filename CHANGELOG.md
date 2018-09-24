@@ -4,6 +4,13 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+### Added
+
+- Added an option to exclude event types from being logged to the database. [`49a886d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/49a886d92de276d146b6c06120b7ab1437bab55b)
+- Added an option to make the Eloquent model being used configurable. [`7395bee`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/7395beed7f57a1a1961c535be1d197d108d4425a)
+- Added an option to disable logging to the database. [`04a3b32`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/04a3b3219174bdd03333e214c03c88b33e5a66de)
+- Added an option to make the database table being used configurable. [`480d288`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/480d288c5d3711964f7b2803632b2b3621041544)
+
 ## [1.0.0] - 2018-09-22
 
 ### Added
