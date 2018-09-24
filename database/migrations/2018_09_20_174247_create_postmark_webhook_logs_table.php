@@ -12,7 +12,7 @@ class CreatePostmarkWebhookLogsTable extends Migration
      */
     public function up()
     {
-        Schema::create('postmark_webhook_logs', function (Blueprint $table) {
+        Schema::create(config('postmark-webhooks.log.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('message_id', 100);
             $table->string('record_type', 32);
@@ -29,6 +29,6 @@ class CreatePostmarkWebhookLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('postmark_webhook_logs');
+        Schema::dropIfExists(config('postmark-webhooks.log.table'));
     }
 }
