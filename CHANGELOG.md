@@ -4,6 +4,11 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [1.2.0] - 2018-09-25
+
+### Added
+- Added event mapping. [`bd52ccc`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/bd52ccc6d421eb87354018df8d3b23d383c51fc7)
+
 ### Changed
 - Code refactor. [`f438b3a`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/f438b3a0e4fe0eb5f05e6e79fc63d7f76de8e990)
 
@@ -39,7 +44,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Pre-release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.0...v1.0.0
 [0.2.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v0.2.0...v0.2.1
