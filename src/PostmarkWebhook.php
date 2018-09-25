@@ -43,7 +43,7 @@ class PostmarkWebhook extends Model
      * we will return a fresh instance.
      *
      * @param  array  $payload
-     * @return \Mvdnbrk\PostmarkWebhooks\PostmarkWebook
+     * @return \Mvdnbrk\PostmarkWebhooks\PostmarkWebhook
      */
     public static function createOrNewfromPayload($payload)
     {
