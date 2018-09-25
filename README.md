@@ -125,12 +125,7 @@ protected $listen = [
 ];
 ```
 
-Available events:
-- open
-- bounce
-- click
-- delivery
-- spam_complaint
+Available events: `open`, `bounce`, `click`, `delivery`, `spam_complaint`.
 
 ### Advanced configuration
 
@@ -153,8 +148,17 @@ Place the events you want to exclude under the `except` key:
     ...
     'except' => [
         'open',
-        'click',
+        ...
     ],
+],
+```
+
+You can map the events fired by this package to your own event classes:
+
+```
+'events' => [
+    'spam_complaint' => App\Events\SpamComplaint,
+    ...
 ],
 ```
 
