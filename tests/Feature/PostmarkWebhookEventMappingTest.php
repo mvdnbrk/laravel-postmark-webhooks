@@ -33,7 +33,7 @@ class PostmarkWebhookEventMappingTest extends TestCase
         config(['postmark-webhooks.events' => ['some_type' => MappedFakeEvent::class]]);
 
         $response = $this->postJson('/api/webhooks/postmark', $this->validPayload([
-            'RecordType' => 'SomeType'
+            'RecordType' => 'SomeType',
         ]));
 
         Event::assertDispatched(MappedFakeEvent::class, function ($event) {

@@ -4,7 +4,6 @@ namespace Mvdnbrk\PostmarkWebhooks\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 use Mvdnbrk\PostmarkWebhooks\Http\Middleware\PostmarkIpsWhitelist;
 
