@@ -5,7 +5,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ## [Unreleased]
 
 ## [1.2.1] - 2018-12-05
-- Added new IP address used by Postmark. [`46ea22c`](ps://github.com/mvdnbrk/laravel-postmark-webhooks/commit/46ea22c6722de71c8ea62544080df64ace7534b7)
+- Added new IP address used by Postmark. [`46ea22c`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/46ea22c6722de71c8ea62544080df64ace7534b7)
 
 ## [1.2.0] - 2018-09-25
 
