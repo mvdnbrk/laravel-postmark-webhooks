@@ -27,7 +27,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 - Added an option to make the database table being used configurable. [`480d288`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/480d288c5d3711964f7b2803632b2b3621041544)
 
 ### Changed
-- Changes PostmarkWebhookLog class to PostmarkWebhook. [`789b9af`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/789b9af41466bd0290ba5f44ba65d9bd7ee55ed8)
+- Changed PostmarkWebhookLog class to PostmarkWebhook. [`789b9af`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/789b9af41466bd0290ba5f44ba65d9bd7ee55ed8)
 
 ## [1.0.0] - 2018-09-22
 
