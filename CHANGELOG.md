@@ -48,8 +48,6 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [0.1.0] - 2018-09-22
 
-### Pre-release
-
 [Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.3...HEAD
 [1.2.3]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.1...v1.2.2
