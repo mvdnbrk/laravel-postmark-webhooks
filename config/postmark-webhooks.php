@@ -32,8 +32,9 @@ return [
 
     'log' => [
         'enabled' => env('POSTMARK_WEBHOOKS_LOG_ENABLED', true),
-        'table' => 'postmark_webhook_logs',
         'model' => Mvdnbrk\PostmarkWebhooks\PostmarkWebhook::class,
+        'table_name' => 'postmark_webhook_logs',
+
         'except' => [
 
         ],

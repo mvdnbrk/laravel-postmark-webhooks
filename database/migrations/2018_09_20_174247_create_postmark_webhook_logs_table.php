@@ -6,13 +6,30 @@ use Illuminate\Database\Migrations\Migration;
 class CreatePostmarkWebhookLogsTable extends Migration
 {
     /**
+     * The table name.
+     *
+     * @var Schema
+     */
+    protected $table_name;
+
+    /**
+     * Create a new migration instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->table_name = config('postmark-webhooks.log.table_name', config('postmark-webhooks.log.table'));
+    }
+
+    /**
      * Run the migrations.
      *
      * @return void
      */
     public function up()
     {
-        Schema::create(config('postmark-webhooks.log.table'), function (Blueprint $table) {
+        Schema::create($this->table_name, function (Blueprint $table) {
             $table->increments('id');
             $table->string('message_id', 100);
             $table->string('record_type', 32);
@@ -29,6 +46,6 @@ class CreatePostmarkWebhookLogsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('postmark-webhooks.log.table'));
+        Schema::dropIfExists($this->table_name);
     }
 }
