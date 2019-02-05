@@ -1,4 +1,3 @@
 <?php
 
-Route::post('/api/webhooks/postmark')
-    ->uses('\Mvdnbrk\PostmarkWebhooks\Http\Controllers\PostmarkWebhooksController@store');
+Route::post('/api/webhooks/postmark', 'PostmarkWebhooksController@store');

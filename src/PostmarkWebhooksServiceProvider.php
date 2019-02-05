@@ -79,6 +79,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
+            'namespace' => 'Mvdnbrk\PostmarkWebhooks\Http\Controllers',
         ];
     }
 
