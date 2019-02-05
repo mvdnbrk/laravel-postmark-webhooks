@@ -13,12 +13,9 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/postmark-webhooks.php' => config_path('postmark-webhooks.php'),
-        ], 'config');
-
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->registerRoutes();
+        $this->registerPublishing();
     }
 
     /**
@@ -30,6 +27,20 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__.'/../config/postmark-webhooks.php', 'postmark-webhooks');
     }
+    /**
+     * Register the publishable resources for this package.
+     *
+     * @return void
+     */
+    private function registerPublishing()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/postmark-webhooks.php' => config_path('postmark-webhooks.php'),
+            ], 'config');
+        }
+    }
+
     /**
      * Register the package routes.
      *
