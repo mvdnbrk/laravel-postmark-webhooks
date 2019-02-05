@@ -38,6 +38,10 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__.'/../config/postmark-webhooks.php' => config_path('postmark-webhooks.php'),
             ], 'config');
+
+            $this->publishes([
+                __DIR__.'/../database/migrations' => database_path('migrations'),
+            ], 'migrations');
         }
     }
 
