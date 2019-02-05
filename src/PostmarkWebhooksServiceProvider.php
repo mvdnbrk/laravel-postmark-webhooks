@@ -2,6 +2,7 @@
 
 namespace Mvdnbrk\PostmarkWebhooks;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class PostmarkWebhooksServiceProvider extends ServiceProvider
@@ -65,7 +66,20 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      */
     private function registerRoutes()
     {
-        $this->loadRoutesFrom(__DIR__.'/routes.php');
+        Route::group($this->routeConfiguration(), function () {
+            $this->loadRoutesFrom(__DIR__.'/routes.php');
+        });
+    }
+
+    /**
+     * Get the route group configuration array.
+     *
+     * @return array
+     */
+    private function routeConfiguration()
+    {
+        return [
+        ];
     }
 
     /**
