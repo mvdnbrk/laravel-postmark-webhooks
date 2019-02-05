@@ -4,9 +4,16 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [1.2.5] - 2019-02-05
+### Changed
+- Changed config key `log.table` to `log.table_name` in `config/postmark-webhooks.php`. [`be76d4e`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/be76d4e8518efa55ae77acc326d46f901dae1305)
+
+### Fixed
+- Fixed missing backslash in `config/postmark-webhooks.php`. [`17e1b5d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/17e1b5db4fd1c86583c2955b4bd10f987efe518d)
+
 ## [1.2.4] - 2019-02-05
 ### Added
-- Added ability to make the URI path configurable. [`1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f)
+- Added ability to make the URI path configurable. [`1a26a5f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f)
 
 ## [1.2.3] - 2019-02-05
 ### Added
@@ -52,7 +59,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [0.1.0] - 2018-09-22
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.4...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.5...HEAD
+[1.2.5]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.4...v1.2.5
 [1.2.4]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.1...v1.2.2
