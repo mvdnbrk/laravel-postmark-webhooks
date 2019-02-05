@@ -4,7 +4,11 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
-## [1.2.3]
+## [1.2.4] - 2019-02-05
+### Added
+- Added ability to make the URI path configurable. [`1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f)
+
+## [1.2.3] - 2019-02-05
 ### Added
 - Added ability to publish database migrations. [`f23b07d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/f23b07ded3fe3ee0f46914390f36715af9d6f0ed)
 
@@ -48,7 +52,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [0.1.0] - 2018-09-22
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.3...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.4...HEAD
+[1.2.4]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.3...v1.2.4
 [1.2.3]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.2...v1.2.3
 [1.2.2]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.1...v1.2.2
 [1.2.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.0...v1.2.1
