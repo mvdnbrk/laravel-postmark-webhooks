@@ -40,7 +40,7 @@ Choose the server you want to setup webhooks for.
 Go to `settings` > `webhooks` > `add webbook`.  
 
 This package will register a route where Postmark can post their webhooks to: `/api/webhooks/postmark`.
-> You may change the `/api/webhooks/postmark` endpoint to anything.  
+> You may change the `/api/webhooks/postmark` endpoint to anything you like.  
 > You can do this by changing the `path` key in the `config/postmark-webooks.php` file.
 
 Fill in your webhook URL: `https://<your-domain.com>/api/webhooks/postmark`  
