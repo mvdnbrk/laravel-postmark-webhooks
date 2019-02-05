@@ -13,8 +13,6 @@ abstract class TestCase extends Orchestra
     protected function setUp()
     {
         parent::setUp();
-
-        $this->artisan('migrate', ['--database' => 'testbench']);
     }
 
     /**
