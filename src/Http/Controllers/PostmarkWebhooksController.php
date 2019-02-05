@@ -5,23 +5,9 @@ namespace Mvdnbrk\PostmarkWebhooks\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
-use Mvdnbrk\PostmarkWebhooks\Http\Middleware\PostmarkIpsWhitelist;
 
 class PostmarkWebhooksController extends Controller
 {
-    /**
-     * Create a controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware([
-            'api',
-            PostmarkIpsWhitelist::class,
-        ]);
-    }
-
     /**
      * Store the result of a Postmark webhook and fire events.
      *

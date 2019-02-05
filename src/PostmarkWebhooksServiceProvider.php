@@ -4,6 +4,7 @@ namespace Mvdnbrk\PostmarkWebhooks;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Mvdnbrk\PostmarkWebhooks\Http\Middleware\PostmarkIpsWhitelist;
 
 class PostmarkWebhooksServiceProvider extends ServiceProvider
 {
@@ -80,6 +81,10 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     {
         return [
             'namespace' => 'Mvdnbrk\PostmarkWebhooks\Http\Controllers',
+            'middleware' => [
+                'api',
+                PostmarkIpsWhitelist::class,
+            ],
         ];
     }
 
