@@ -75,6 +75,6 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      */
     protected function shouldMigrate()
     {
-        return config('postmark.log.enabled');
+        return config('postmark-webhooks.log.enabled');
     }
 }
