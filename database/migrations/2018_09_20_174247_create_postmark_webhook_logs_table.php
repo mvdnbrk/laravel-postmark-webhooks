@@ -8,7 +8,7 @@ class CreatePostmarkWebhookLogsTable extends Migration
     /**
      * The table name.
      *
-     * @var Schema
+     * @var string
      */
     protected $table_name;
 
