@@ -8,14 +8,6 @@ use Mvdnbrk\PostmarkWebhooks\PostmarkWebhooksServiceProvider;
 abstract class TestCase extends Orchestra
 {
     /**
-     * Setup the test environment.
-     */
-    protected function setUp()
-    {
-        parent::setUp();
-    }
-
-    /**
      * Define environment setup.
      *
      * @param  \Illuminate\Foundation\Application  $app
