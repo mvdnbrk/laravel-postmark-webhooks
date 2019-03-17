@@ -4,7 +4,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
-## [1.2.7] - 2019-03-17
+## [v1.2.7] - 2019-03-17
 
 ### Changed
 - Use Str::snake() directly. [`752adc2`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/752adc289dc85f22c5383fd1073d77e88d4531af)
@@ -12,12 +12,12 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ### Fixed
 - Use setTable(). [`452579c`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/452579c3de69e1f8d7c24445656b5f5f830d9276)
 
-## [1.2.6] - 2019-02-09
+## [v1.2.6] - 2019-02-09
 
 ### Changed
 - Updated docblock. [`b2ffd4b`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/b2ffd4b48604b8c75de9c142c4b207ff7943318d)
 
-## [1.2.5] - 2019-02-05
+## [v1.2.5] - 2019-02-05
 
 ### Changed
 - Changed config key `log.table` to `log.table_name` in `config/postmark-webhooks.php`. [`be76d4e`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/be76d4e8518efa55ae77acc326d46f901dae1305)
@@ -25,27 +25,27 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ### Fixed
 - Fixed missing backslash in `config/postmark-webhooks.php`. [`17e1b5d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/17e1b5db4fd1c86583c2955b4bd10f987efe518d)
 
-## [1.2.4] - 2019-02-05
+## [v1.2.4] - 2019-02-05
 
 ### Added
 - Added ability to make the URI path configurable. [`1a26a5f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1a26a5ff5c1ab9c4647e2f75d2687b77fa21f04f)
 
-## [1.2.3] - 2019-02-05
+## [v1.2.3] - 2019-02-05
 
 ### Added
 - Added ability to publish database migrations. [`f23b07d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/f23b07ded3fe3ee0f46914390f36715af9d6f0ed)
 
-## [1.2.2] - 2019-02-03
+## [v1.2.2] - 2019-02-03
 
 ### Added
 - Added support for Laravel 5.8. [`1fc71fe`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1fc71fe2e30c38b48b797a3d96470a37e26338b7)
 
-## [1.2.1] - 2018-12-05
+## [v1.2.1] - 2018-12-05
 
 ### Added
 - Added new IP address used by Postmark. [`46ea22c`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/46ea22c6722de71c8ea62544080df64ace7534b7)
 
-## [1.2.0] - 2018-09-25
+## [v1.2.0] - 2018-09-25
 
 ### Added
 - Added event mapping. [`bd52ccc`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/bd52ccc6d421eb87354018df8d3b23d383c51fc7)
@@ -53,7 +53,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ### Changed
 - Code refactor. [`f438b3a`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/f438b3a0e4fe0eb5f05e6e79fc63d7f76de8e990)
 
-## [1.1.0] - 2018-09-24
+## [v1.1.0] - 2018-09-24
 
 ### Added
 - Added an option to exclude event types from being logged to the database. [`49a886d`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/49a886d92de276d146b6c06120b7ab1437bab55b)
@@ -64,23 +64,25 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ### Changed
 - Changed PostmarkWebhookLog class to PostmarkWebhook. [`789b9af`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/789b9af41466bd0290ba5f44ba65d9bd7ee55ed8)
 
-## [1.0.0] - 2018-09-22
+## [v1.0.0] - 2018-09-22
 
 ### Added
 - Added dispatching of different event types. [`6a90992`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/6a9099266e8b71e565d3bedb6e171c09b6a8387f)
 - Added the email address to the events and to the logs table. [`ba94bfa`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/ba94bfa9ad09d1cf7eff0cff946b65ae8122fd6a)
 
-## [0.2.1] - 2018-09-22
+## [v0.2.1] - 2018-09-22
 
 ### Added 
 - Added 127.0.0.1 to trusted IPs. [`edada5f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/edada5f22a718a7f6c76ffe559c21fbc2ca8155d)
 
-## [0.2.0] - 2018-09-22
+## [v0.2.0] - 2018-09-22
 
 ### Changed
 - Changed the database schema for the `postmark_webhook_logs` table. [`815e2cf`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/815e2cfd48d1f279925f36e2b877eee7c9346ac6)
 
-## [0.1.0] - 2018-09-22
+## [v0.1.0] - 2018-09-22
+
+### Initial release
 
 [Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.7...HEAD
 [1.2.7]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.6...v1.2.7
