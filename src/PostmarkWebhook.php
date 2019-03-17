@@ -31,7 +31,9 @@ class PostmarkWebhook extends Model
      */
     public function __construct(array $attributes = [])
     {
-        $this->table = config('postmark-webhooks.log.table_name', config('postmark-webhooks.log.table'));
+        $this->setTable(
+            config('postmark-webhooks.log.table_name', config('postmark-webhooks.log.table'))
+        );
 
         parent::__construct($attributes);
     }
