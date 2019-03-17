@@ -6,6 +6,9 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [1.2.7] - 2019-03-17
 
+### Changed
+- Use Str::snake() directly. [`752adc2`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/752adc289dc85f22c5383fd1073d77e88d4531af)
+
 ### Fixed
 - Use setTable(). [`452579c`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/452579c3de69e1f8d7c24445656b5f5f830d9276)
 
