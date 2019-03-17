@@ -2,6 +2,7 @@
 
 namespace Mvdnbrk\PostmarkWebhooks;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 class PostmarkWebhook extends Model
@@ -51,7 +52,7 @@ class PostmarkWebhook extends Model
     {
         $payload = collect($payload);
 
-        $recordType = snake_case($payload->get('RecordType'));
+        $recordType = Str::snake($payload->get('RecordType'));
 
         $model = (new static)->forceFill([
             'email' => $payload->get('Recipient', $payload->get('Email')),
