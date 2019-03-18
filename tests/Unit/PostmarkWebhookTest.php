@@ -11,6 +11,15 @@ class PostmarkWebhookTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    public function it_sets_the_correct_table_name()
+    {
+        config(['postmark-webhooks.log.table_name' => 'test_table_name']);
+        $this->assertEquals('test_table_name', (new PostmarkWebhook())->getTable());
+
+        $this->assertEquals('dummy_table', (new DummyPostmarkWebhook())->getTable());
+    }
+
+    /** @test */
     public function it_can_create_a_postmark_webhook()
     {
         $payload = [
@@ -75,4 +84,9 @@ class PostmarkWebhookTest extends TestCase
         $this->assertEquals('john@example.com', $webhook->email);
         $this->assertEquals($payload, $webhook->payload);
     }
+}
+
+class DummyPostmarkWebhook extends PostmarkWebhook
+{
+    protected $table = 'dummy_table';
 }
