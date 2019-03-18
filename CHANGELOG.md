@@ -4,6 +4,14 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [v1.3.0] - 2019-03-18
+
+### Fixed
+- Use table name if set on the model. [`da2aded`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/da2aded3b1058ccd79520f1959ae21cbc96504cf)
+
+### Removed
+- Removed use of `postmark-webhooks.log.table` config value, use `postmark-webhooks.log.table_name` instead. [`8d82e03`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/8d82e030ef9695ce21e96488bcff0fd3516d61a5)
+
 ## [v1.2.7] - 2019-03-17
 
 ### Changed
@@ -84,7 +92,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Initial release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.7...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.3.0...HEAD
+[v1.3.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.7...v1.3.0
 [v1.2.7]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.6...v1.2.7
 [v1.2.6]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.5...v1.2.6
 [v1.2.5]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.2.4...v1.2.5
