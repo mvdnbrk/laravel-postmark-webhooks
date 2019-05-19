@@ -146,7 +146,7 @@ the `Mvdnbrk\PostmarkWebhooks\PostmarkWebhook` class.
 You can also exclude one or more event types from being logged to the database.  
 Place the events you want to exclude under the `except` key:
 
-```
+```php
 'log' => [
     ...
     'except' => [
@@ -158,7 +158,7 @@ Place the events you want to exclude under the `except` key:
 
 You can map the events fired by this package to your own event classes:
 
-```
+```php
 'events' => [
     'spam_complaint' => App\Events\SpamComplaint,
     ...
