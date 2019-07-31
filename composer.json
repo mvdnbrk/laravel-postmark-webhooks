@@ -1,6 +1,5 @@
 {
     "name": "mvdnbrk/laravel-postmark-webhooks",
-    "type": "library",
     "description": "Handle Postmark webhooks in a Laravel application.",
     "keywords": [
         "mvdnbrk",
@@ -21,14 +20,27 @@
     ],
     "require": {
         "php": "^7.1",
-        "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0"
+        "illuminate/support": "5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0"
     },
     "require-dev": {
         "mockery/mockery": "^1.1",
         "nunomaduro/collision": "^3.0",
-        "orchestra/testbench": "~3.5.0|~3.6.0|~3.7.0|~3.8.0",
-        "phpunit/phpunit": "^7.5|^8.1",
+        "orchestra/testbench": "~3.5.0 || ~3.6.0 || ~3.7.0 || ~3.8.0",
+        "phpunit/phpunit": "^7.5 || ^8.1",
         "scrutinizer/ocular": "^1.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Mvdnbrk\\PostmarkWebhooks\\PostmarkWebhooksServiceProvider"
+            ]
+        }
     },
     "autoload": {
         "psr-4": {
@@ -42,18 +54,5 @@
     },
     "scripts": {
         "test": "vendor/bin/phpunit"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0-dev"
-        },
-        "laravel": {
-            "providers": [
-                "Mvdnbrk\\PostmarkWebhooks\\PostmarkWebhooksServiceProvider"
-            ]
-        }
-    },
-    "config": {
-        "sort-packages": true
     }
 }
