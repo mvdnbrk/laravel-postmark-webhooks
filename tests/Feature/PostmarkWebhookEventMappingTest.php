@@ -2,8 +2,8 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Support\Facades\Event;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 

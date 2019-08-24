@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Database;
+namespace Mvdnbrk\PostmarkWebhooks\Tests\Database;
 
-use Tests\TestCase;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 

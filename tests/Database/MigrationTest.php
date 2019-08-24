@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Database;
+namespace Mvdnbrk\PostmarkWebhooks\Tests\Database;
 
-use Tests\TestCase;
 use Illuminate\Support\Facades\Schema;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MigrationTest extends TestCase

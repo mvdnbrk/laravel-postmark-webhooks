@@ -49,7 +49,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Tests\\": "tests/"
+            "Mvdnbrk\\PostmarkWebhooks\\Tests\\": "tests/"
         }
     },
     "scripts": {

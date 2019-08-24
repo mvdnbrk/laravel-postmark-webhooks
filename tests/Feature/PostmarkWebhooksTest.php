@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature;
+namespace Mvdnbrk\PostmarkWebhooks\Tests\Feature;
 
-use Tests\TestCase;
 use Illuminate\Support\Facades\Event;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
