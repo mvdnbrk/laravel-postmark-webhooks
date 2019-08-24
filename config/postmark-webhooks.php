@@ -16,7 +16,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Log options
+    | Log Options
     |--------------------------------------------------------------------------
     |
     | Logging events to the database is enabled by default. You may set this
@@ -36,13 +36,13 @@ return [
         'table_name' => 'postmark_webhook_logs',
 
         'except' => [
-
+            //
         ],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Event mapping
+    | Event Mapping
     |--------------------------------------------------------------------------
     |
     | This option allows you to map Postmark webhook
@@ -51,7 +51,7 @@ return [
     */
 
     'events' => [
-
+        //
     ],
 
 ];
