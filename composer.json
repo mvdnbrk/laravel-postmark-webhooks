@@ -52,6 +52,8 @@
             "Mvdnbrk\\PostmarkWebhooks\\Tests\\": "tests/"
         }
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "scripts": {
         "test": "vendor/bin/phpunit"
     }
