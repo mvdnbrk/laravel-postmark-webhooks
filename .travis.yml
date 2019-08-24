@@ -1,19 +1,52 @@
-dist: trusty
 language: php
-
-php:
-  - 7.1
-  - 7.2
-  - 7.3
 
 # This triggers builds to run on the new TravisCI infrastructure.
 # See: http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 sudo: false
 
+matrix:
+  include:
+    - php: 7.1
+      env: LARAVEL='5.5.*' TESTBENCH='3.5.*'
+    - php: 7.1
+      env: LARAVEL='5.6.*' TESTBENCH='3.6.*'
+    - php: 7.1
+      env: LARAVEL='5.7.*' TESTBENCH='3.7.*'
+    - php: 7.1
+      env: LARAVEL='5.8.*' TESTBENCH='3.8.*'
+    - php: 7.2
+      env: LARAVEL='5.5.*' TESTBENCH='3.5.*'
+    - php: 7.2
+      env: LARAVEL='5.6.*' TESTBENCH='3.6.*'
+    - php: 7.2
+      env: LARAVEL='5.7.*' TESTBENCH='3.7.*'
+    - php: 7.2
+      env: LARAVEL='5.8.*' TESTBENCH='3.8.*'
+    - php: 7.2
+      env: LARAVEL='6.0.*' TESTBENCH='3.9.*'
+    - php: 7.3
+      env: LARAVEL='5.5.*' TESTBENCH='3.5.*'
+    - php: 7.3
+      env: LARAVEL='5.6.*' TESTBENCH='3.6.*'
+    - php: 7.3
+      env: LARAVEL='5.7.*' TESTBENCH='3.7.*'
+    - php: 7.3
+      env: LARAVEL='5.8.*' TESTBENCH='3.8.*'
+    - php: 7.3
+      env: LARAVEL='6.0.*' TESTBENCH='3.9.*'
+  fast_finish: true
+
 ## Cache composer
 cache:
   directories:
     - $HOME/.composer/cache
+
+before_install:
+  - travis_retry composer self-update
+  - travis_retry composer require "laravel/framework:${LARAVEL}" "orchestra/testbench:${TESTBENCH}" --no-interaction --no-update
+
+install:
+  - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
 before_script:
   - travis_retry composer update ${COMPOSER_FLAGS} --no-interaction --prefer-dist
