@@ -2,8 +2,8 @@
 
 namespace Mvdnbrk\PostmarkWebhooks\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Mvdnbrk\PostmarkWebhooks\PostmarkWebhooksServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra
 {

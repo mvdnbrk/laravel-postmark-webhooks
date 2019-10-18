@@ -2,9 +2,9 @@
 
 namespace Mvdnbrk\PostmarkWebhooks\Tests\Database;
 
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class MigrationTest extends TestCase
 {

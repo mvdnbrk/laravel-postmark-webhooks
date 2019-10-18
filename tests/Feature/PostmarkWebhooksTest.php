@@ -2,11 +2,11 @@
 
 namespace Mvdnbrk\PostmarkWebhooks\Tests\Feature;
 
-use Illuminate\Support\Facades\Event;
-use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
-use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Event;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
+use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 
 class PostmarkWebhooksTest extends TestCase
 {
