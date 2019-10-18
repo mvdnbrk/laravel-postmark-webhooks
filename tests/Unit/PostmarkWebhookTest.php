@@ -2,9 +2,9 @@
 
 namespace Mvdnbrk\PostmarkWebhooks\Tests\Database;
 
-use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
-use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Mvdnbrk\PostmarkWebhooks\PostmarkWebhook;
+use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
 
 class PostmarkWebhookTest extends TestCase
 {
