@@ -2,8 +2,8 @@
 
 namespace Mvdnbrk\PostmarkWebhooks;
 
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class PostmarkWebhook extends Model
 {
