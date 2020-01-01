@@ -2,7 +2,6 @@
     "name": "mvdnbrk/laravel-postmark-webhooks",
     "description": "Handle Postmark webhooks in a Laravel application.",
     "keywords": [
-        "mvdnbrk",
         "Laravel",
         "Postmark",
         "webhook",
