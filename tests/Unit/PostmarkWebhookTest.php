@@ -38,8 +38,10 @@ class PostmarkWebhookTest extends TestCase
         tap(PostmarkWebhook::first(), function ($webhook) use ($payload) {
             $this->assertEquals('9999-9999-9999-9999-9999', $webhook->message_id);
             $this->assertEquals('open', $webhook->record_type);
-            $this->assertJson($webhook->getOriginal('payload'));
-            $this->assertJsonStringEqualsJsonString(json_encode($payload), $webhook->getOriginal('payload'));
+
+            $method = method_exists($webhook, 'getRawOriginal') ? 'getRawOriginal' : 'getOriginal';
+            $this->assertJson($webhook->{$method}('payload'));
+            $this->assertJsonStringEqualsJsonString(json_encode($payload), $webhook->{$method}('payload'));
         });
     }
 
@@ -59,8 +61,10 @@ class PostmarkWebhookTest extends TestCase
             $this->assertEquals('9999-9999-9999-9999-9999', $webhook->message_id);
             $this->assertEquals('open', $webhook->record_type);
             $this->assertEquals('john@example.com', $webhook->email);
-            $this->assertJson($webhook->getOriginal('payload'));
-            $this->assertJsonStringEqualsJsonString(json_encode($payload), $webhook->getOriginal('payload'));
+
+            $method = method_exists($webhook, 'getRawOriginal') ? 'getRawOriginal' : 'getOriginal';
+            $this->assertJson($webhook->{$method}('payload'));
+            $this->assertJsonStringEqualsJsonString(json_encode($payload), $webhook->{$method}('payload'));
         });
     }
 
