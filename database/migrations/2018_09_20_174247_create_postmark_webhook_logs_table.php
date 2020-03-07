@@ -30,7 +30,7 @@ class CreatePostmarkWebhookLogsTable extends Migration
     public function up()
     {
         Schema::create($this->table_name, function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('message_id', 100);
             $table->string('record_type', 32);
             $table->string('email')->index();
