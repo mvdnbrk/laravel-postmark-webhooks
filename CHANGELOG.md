@@ -4,6 +4,11 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [v1.5.0] - 2020-08-08
+
+### Added
+- Added support for Laravel 8. [`#5`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/5)
+
 ## [v1.4.0] - 2020-03-07
 
 ### Added
@@ -106,7 +111,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Initial release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.4.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.5.0...HEAD
+[v1.5.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.4.0...v1.5.0
 [v1.4.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.3.2...v1.4.0
 [v1.3.2]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.3.1...v1.3.2
 [v1.3.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.3.0...v1.3.1
