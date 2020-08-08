@@ -15,6 +15,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 - Updated version constraints to support Laravel 6. [`1bf3d5f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/1bf3d5f4b26b912449dc6b409b372ae1300c8efa)
 
 ## [v1.3.1] - 2019-05-20
+
 - No notable changes. Clean up the garden.
 
 ## [v1.3.0] - 2019-03-18
