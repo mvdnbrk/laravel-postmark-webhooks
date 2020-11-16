@@ -100,7 +100,7 @@ class YourListener
     public function handle(PostmarkWebhookCalled $event)
     {
         // Do your work here.
-        
+
         // You can access the payload here with: $event->payload.
         // The email address, message ID and record type are also available:
         // $event->email
