@@ -4,32 +4,16 @@ namespace Mvdnbrk\PostmarkWebhooks\Events;
 
 class PostmarkWebhookCalled
 {
-    /**
-     * The email address.
-     *
-     * @var string
-     */
+    /** @var string */
     public $email;
 
-    /**
-     * The record type.
-     *
-     * @var string
-     */
+    /** @var string */
     public $recordType;
 
-    /**
-     * The message ID.
-     *
-     * @var string
-     */
+    /** @var string */
     public $messageId;
 
-    /**
-     * The payload from the webhook call.
-     *
-     * @var array
-     */
+    /** @var array */
     public $payload;
 
     /**

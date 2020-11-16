@@ -6,28 +6,14 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePostmarkWebhookLogsTable extends Migration
 {
-    /**
-     * The table name.
-     *
-     * @var string
-     */
+    /** @var string */
     protected $table_name;
 
-    /**
-     * Create a new migration instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->table_name = config('postmark-webhooks.log.table_name', config('postmark-webhooks.log.table'));
     }
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up(): void
     {
         Schema::create($this->table_name, function (Blueprint $table) {
@@ -40,11 +26,6 @@ class CreatePostmarkWebhookLogsTable extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down(): void
     {
         Schema::dropIfExists($this->table_name);

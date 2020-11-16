@@ -7,29 +7,14 @@ use Illuminate\Support\Str;
 
 class PostmarkWebhook extends Model
 {
-    /**
-     * The name of the "updated at" column.
-     * Set to null to disable this column.
-     *
-     * @var string
-     */
+    /** @var string|null */
     const UPDATED_AT = null;
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
+    /** @var array */
     protected $casts = [
         'payload' => 'array',
     ];
 
-    /**
-     * Create a new model instance..
-     *
-     * @param  array  $attributes
-     * @return void
-     */
     public function __construct(array $attributes = [])
     {
         if (! isset($this->table)) {
