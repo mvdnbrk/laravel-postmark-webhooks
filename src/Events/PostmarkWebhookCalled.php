@@ -24,7 +24,7 @@ class PostmarkWebhookCalled
      * @param  array  $payload
      * @return void
      */
-    public function __construct($email, $recordType, $messageId, $payload)
+    public function __construct(string $email, string $recordType, string $messageId, array $payload)
     {
         $this->email = $email;
         $this->recordType = $recordType;
