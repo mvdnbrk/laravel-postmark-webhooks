@@ -48,7 +48,7 @@ You are ready to receive webhook notifications from Postmark!
 
 ## Protection of your webhook
 
-This package protects your webhook automatically by only allowing requests from the [IP range](https://postmarkapp.com/support/article/800-ips-for-firewalls) that Postmark uses.
+This package protects your webhook automatically by only allowing requests from the [IP range](https://postmarkapp.com/support/article/800-ips-for-firewalls#webhooks) that Postmark uses.
 
 ## Usage
 
