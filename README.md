@@ -21,8 +21,6 @@ You can install the package via composer:
 composer require mvdnbrk/laravel-postmark-webhooks
 ```
 
-The service provider will automatically register itself.
-
 This package will log all incoming webhooks to the database by default.  
 Run the migrations to create a `postmark_webhook_logs` table in the database:
 
