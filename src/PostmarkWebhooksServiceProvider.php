@@ -4,6 +4,7 @@ namespace Mvdnbrk\PostmarkWebhooks;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Mvdnbrk\PostmarkWebhooks\Http\Controllers\PostmarkWebhooksController;
 use Mvdnbrk\PostmarkWebhooks\Http\Middleware\PostmarkIpsWhitelist;
 
 class PostmarkWebhooksServiceProvider extends ServiceProvider
@@ -68,7 +69,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     private function registerRoutes()
     {
         Route::group($this->routeConfiguration(), function () {
-            $this->loadRoutesFrom(__DIR__.'/routes.php');
+            Route::post(config('postmark-webhooks.path'), PostmarkWebhooksController::class);
         });
     }
 
@@ -80,7 +81,6 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     private function routeConfiguration()
     {
         return [
-            'namespace' => 'Mvdnbrk\PostmarkWebhooks\Http\Controllers',
             'middleware' => [
                 'api',
                 PostmarkIpsWhitelist::class,
