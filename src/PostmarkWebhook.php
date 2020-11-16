@@ -48,9 +48,7 @@ class PostmarkWebhook extends Model
             'payload' => $payload->all(),
         ]);
 
-        if (config('postmark-webhooks.log.enabled')
-            && ! collect(config('postmark-webhooks.log.except'))->contains($recordType)
-        ) {
+        if (config('postmark-webhooks.log.enabled') && ! collect(config('postmark-webhooks.log.except'))->contains($recordType)) {
             $model->save();
         }
 
