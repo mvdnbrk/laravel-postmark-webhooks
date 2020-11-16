@@ -13,7 +13,7 @@ class StorePostmarkWebhookController extends Controller
     {
         $model = config('postmark-webhooks.log.model');
 
-        $postmarkWebhook = $model::createOrNewfromPayload($request->input());
+        $postmarkWebhook = $model::createOrNewFromPayload($request->input());
 
         tap(new PostmarkWebhookCalled(
             $postmarkWebhook->email,

@@ -35,7 +35,7 @@ class PostmarkWebhook extends Model
      * @param  array  $payload
      * @return \Mvdnbrk\PostmarkWebhooks\PostmarkWebhook
      */
-    public static function createOrNewfromPayload($payload): self
+    public static function createOrNewFromPayload($payload): self
     {
         $payload = collect($payload);
 
