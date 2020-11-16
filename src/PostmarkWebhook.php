@@ -24,15 +24,6 @@ class PostmarkWebhook extends Model
         parent::__construct($attributes);
     }
 
-    /**
-     * Create a new model in the database.
-     * If logging to the database is disabled
-     * or the event type is excluded from logging
-     * we will return a fresh instance.
-     *
-     * @param  array  $payload
-     * @return \Mvdnbrk\PostmarkWebhooks\PostmarkWebhook
-     */
     public static function createOrNewFromPayload(array $payload): self
     {
         $payload = collect($payload);
