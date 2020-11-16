@@ -15,7 +15,7 @@ class PostmarkWebhooksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request): JsonResponse
+    public function __invoke(Request $request)
     {
         $model = config('postmark-webhooks.log.model');
 
