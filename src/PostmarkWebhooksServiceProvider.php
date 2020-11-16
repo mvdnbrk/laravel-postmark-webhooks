@@ -13,7 +13,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->registerRoutes();
         $this->registerMigrations();
@@ -25,7 +25,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/postmark-webhooks.php', 'postmark-webhooks');
     }
@@ -35,7 +35,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerMigrations()
+    private function registerMigrations(): void
     {
         if ($this->app->runningInConsole() && $this->shouldMigrate()) {
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
@@ -47,7 +47,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerPublishing()
+    private function registerPublishing(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -65,7 +65,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerRoutes()
+    private function registerRoutes(): void
     {
         Route::group($this->routeConfiguration(), function () {
             $this->loadRoutesFrom(__DIR__.'/routes.php');
@@ -77,7 +77,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    private function routeConfiguration()
+    private function routeConfiguration(): array
     {
         return [
             'namespace' => 'Mvdnbrk\PostmarkWebhooks\Http\Controllers',
@@ -93,7 +93,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return bool
      */
-    protected function shouldMigrate()
+    protected function shouldMigrate(): bool
     {
         return config('postmark-webhooks.log.enabled');
     }

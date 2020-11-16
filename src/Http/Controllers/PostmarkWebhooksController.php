@@ -2,6 +2,7 @@
 
 namespace Mvdnbrk\PostmarkWebhooks\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
@@ -12,9 +13,9 @@ class PostmarkWebhooksController extends Controller
      * Store the result of a Postmark webhook and fire events.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $request): JsonResponse
     {
         $model = config('postmark-webhooks.log.model');
 
