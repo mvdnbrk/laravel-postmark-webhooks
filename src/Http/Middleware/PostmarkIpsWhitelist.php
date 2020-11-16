@@ -8,12 +8,13 @@ class PostmarkIpsWhitelist
 {
     /**
      * Array of IP addresses from Postmark that are white listed.
-     * @see https://postmarkapp.com/support/article/800-ips-for-firewalls
+     * @see https://postmarkapp.com/support/article/800-ips-for-firewalls#webhooks
      *
      * @var array
      */
     private $ips = [
         '127.0.0.1',
+        '3.134.147.250',
         '18.217.206.57',
         '50.31.156.6',
         '50.31.156.77',
