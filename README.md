@@ -4,7 +4,7 @@
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-travis]][link-travis]
+[![Tests][ico-tests]][link-tests]
 [![StyleCI][ico-style-ci]][link-style-ci]
 [![Total Downloads][ico-downloads]][link-downloads]
 
@@ -192,12 +192,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 
 [ico-version]: https://img.shields.io/packagist/v/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/mvdnbrk/laravel-postmark-webhooks/master.svg?style=flat-square
+[ico-tests]: https://img.shields.io/github/workflow/status/mvdnbrk/laravel-postmark-webhooks/tests/main?label=tests&style=flat-square
 [ico-style-ci]: https://styleci.io/repos/149487979/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/mvdnbrk/laravel-postmark-webhooks
-[link-travis]: https://travis-ci.org/mvdnbrk/laravel-postmark-webhooks
+[link-tests]: https://github.com/mvdnbrk/laravel-postmark-webhooks/actions?query=workflow%3Atests
 [link-style-ci]: https://styleci.io/repos/149487979
 [link-downloads]: https://packagist.org/packages/mvdnbrk/laravel-postmark-webhooks
 [link-author]: https://github.com/mvdnbrk
