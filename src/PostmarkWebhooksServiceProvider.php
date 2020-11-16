@@ -14,7 +14,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         $this->registerRoutes();
         $this->registerMigrations();
@@ -26,7 +26,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/postmark-webhooks.php', 'postmark-webhooks');
     }
@@ -36,7 +36,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerMigrations()
+    private function registerMigrations(): void
     {
         if ($this->app->runningInConsole() && $this->shouldMigrate()) {
             $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
@@ -48,7 +48,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerPublishing()
+    private function registerPublishing(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -66,7 +66,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    private function registerRoutes()
+    private function registerRoutes(): void
     {
         Route::group($this->routeConfiguration(), function () {
             Route::post(config('postmark-webhooks.path'), PostmarkWebhooksController::class);
@@ -78,7 +78,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    private function routeConfiguration()
+    private function routeConfiguration(): array
     {
         return [
             'middleware' => [
@@ -93,7 +93,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
      *
      * @return bool
      */
-    protected function shouldMigrate()
+    protected function shouldMigrate(): bool
     {
         return config('postmark-webhooks.log.enabled');
     }
