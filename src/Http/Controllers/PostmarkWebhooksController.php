@@ -30,8 +30,7 @@ class PostmarkWebhooksController extends Controller
             event($event);
             event("webhook.postmark: {$postmarkWebhook->record_type}", $event);
 
-            $dispatchEvent = config("postmark-webhooks.events.{$postmarkWebhook->record_type}");
-            if ($dispatchEvent) {
+            if ($dispatchEvent = config("postmark-webhooks.events.{$postmarkWebhook->record_type}")) {
                 event(new $dispatchEvent($event));
             }
         });
