@@ -44,7 +44,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     private function registerRoutes(): void
     {
         Route::group($this->routeConfiguration(), function () {
-            Route::post(config('postmark-webhooks.path'), StorePostmarkWebhooksController::class);
+            Route::post(config('postmark-webhooks.path'), StorePostmarkWebhookController::class);
         });
     }
 
