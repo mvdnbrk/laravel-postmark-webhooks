@@ -4,6 +4,9 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+### Added
+- Support for PHP 8. [`#8`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/8)
+
 ### Removed
 - Support for Laravel ^5.5. [`#6`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/6)
 
@@ -107,7 +110,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [v0.2.1] - 2018-09-22
 
-### Added 
+### Added
 - Added 127.0.0.1 to trusted IPs. [`edada5f`](https://github.com/mvdnbrk/laravel-postmark-webhooks/commit/edada5f22a718a7f6c76ffe559c21fbc2ca8155d)
 
 ## [v0.2.0] - 2018-09-22
