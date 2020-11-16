@@ -4,6 +4,9 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+### Removed
+- Support for Laravel ^5.5. [`#6`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/6)
+
 ## [v1.5.1] - 2020-11-16
 
 ### Fixed
