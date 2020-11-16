@@ -199,7 +199,7 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/mvdnbrk/laravel-postmark-webhooks/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
-[ico-style-ci]: https://styleci.io/repos/149487979/shield?branch=master
+[ico-style-ci]: https://styleci.io/repos/149487979/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/mvdnbrk/laravel-postmark-webhooks
