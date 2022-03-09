@@ -19,14 +19,14 @@ jobs:
           - laravel: ^8.0
             testbench: ^6.0
           - laravel: ^9.0
-            testbench: ^7.0            
+            testbench: ^7.0
         exclude:
           - php: 7.2
             laravel: ^8.0
           - php: 7.3
-            laravel: ^9.0      
+            laravel: ^9.0
           - php: 7.4
-            laravel: ^9.0            
+            laravel: ^9.0
           - php: 8.0
             stability: prefer-lowest
 
@@ -46,9 +46,11 @@ jobs:
         run: |
           echo "::add-matcher::${{ runner.tool_cache }}/php.json"
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
       - name: Install dependencies
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+
       - name: Execute tests
         run: vendor/bin/phpunit
