@@ -8,6 +8,7 @@ class PostmarkIpsWhitelist
 {
     /**
      * Array of IP addresses from Postmark that are white listed.
+     *
      * @see https://postmarkapp.com/support/article/800-ips-for-firewalls#webhooks
      *
      * @var array
