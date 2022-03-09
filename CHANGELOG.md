@@ -7,7 +7,10 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 ## [v1.7.0] - 2022-03-09
 
 ### Added
-- Support for Laravel 9. [`#8`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/17)
+- Support for Laravel 9. [`#17`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/17)
+
+### Changed
+- Make message_id nullable. [`#13`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/13)
 
 ### Added
 - Support for PHP 8. [`#8`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/8)
