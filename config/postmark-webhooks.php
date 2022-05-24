@@ -59,7 +59,7 @@ return [
     | Allowlist IPs
     |--------------------------------------------------------------------------
     |
-    | This option allows you to set custom IPs for testing webhooks 
+    | This option allows you to set custom IPs for testing webhooks
     | with tools like ngrok
     |
     */
