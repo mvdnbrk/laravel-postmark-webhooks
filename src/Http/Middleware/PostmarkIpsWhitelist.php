@@ -13,7 +13,7 @@ class PostmarkIpsWhitelist
      *
      * @var array
      */
-    private $ips = config('postmark-webhooks.allowlist-ips')
+    private $ips = config('postmark-webhooks.allowlist-ips');
 
     /**
      * Handle an incoming request.
