@@ -54,6 +54,18 @@ You are ready to receive webhook notifications from Postmark!
 
 This package protects your webhook automatically by only allowing requests from the [IP range](https://postmarkapp.com/support/article/800-ips-for-firewalls#webhooks) that Postmark uses.
 
+When your app runs behind a proxy or load balancer (Cloudflare, ngrok, a load balancer), Laravel sees the proxy's IP address instead of Postmark's, and every webhook is rejected with a `401`. [Configure trusted proxies](https://laravel.com/docs/requests#configuring-trusted-proxies) so Laravel reads the real client IP, for example in `bootstrap/app.php`:
+
+```php
+->withMiddleware(function (Middleware $middleware) {
+    $middleware->trustProxies(at: '*');
+})
+```
+
+Only trust all proxies (`*`) when your app can't be reached except through the proxy.
+
+The IP check is skipped when `APP_ENV` is `local`, so you can test webhooks with a tunnel such as ngrok.
+
 ## Usage
 
 Postmark can send out several event types by posting a webhook.  
