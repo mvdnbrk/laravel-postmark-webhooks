@@ -1,6 +1,5 @@
-.DS_store
-.phpunit.result.cache
+.DS_Store
+.phpunit.cache
 composer.lock
 vendor
-coverage
 phpunit.xml

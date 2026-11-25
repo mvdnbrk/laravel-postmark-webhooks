@@ -1,24 +1,25 @@
 <?php
 
-namespace Tests\Feature;
+namespace Mvdnbrk\PostmarkWebhooks\Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Event;
 use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class PostmarkWebhookEventMappingTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
         Event::fake();
     }
 
-    protected function validPayload($attributes = [])
+    protected function validPayload(array $attributes = []): array
     {
         return array_merge([
             'Recipient' => 'john@example.com',
@@ -27,8 +28,8 @@ class PostmarkWebhookEventMappingTest extends TestCase
         ], $attributes);
     }
 
-    /** @test */
-    public function when_an_event_is_configured_to_be_mapped_to_a_dedicated_class_we_will_fire_that_event()
+    #[Test]
+    public function when_an_event_is_configured_to_be_mapped_to_a_dedicated_class_we_will_fire_that_event(): void
     {
         config(['postmark-webhooks.events' => ['some_type' => MappedFakeEvent::class]]);
 
