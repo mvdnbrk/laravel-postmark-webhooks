@@ -5,13 +5,14 @@ namespace Mvdnbrk\PostmarkWebhooks\Tests\Database;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Schema;
 use Mvdnbrk\PostmarkWebhooks\Tests\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class MigrationTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function it_runs_the_migrations()
+    #[Test]
+    public function it_runs_the_migrations(): void
     {
         $columns = Schema::getColumnListing('postmark_webhook_logs');
 

@@ -13,7 +13,7 @@ abstract class TestCase extends Orchestra
      * @param  \Illuminate\Foundation\Application  $app
      * @return void
      */
-    protected function getEnvironmentSetUp($app)
+    protected function getEnvironmentSetUp($app): void
     {
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
@@ -29,7 +29,7 @@ abstract class TestCase extends Orchestra
      * @param  \Illuminate\Foundation\Application  $app
      * @return array
      */
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             PostmarkWebhooksServiceProvider::class,
