@@ -52,7 +52,7 @@ class PostmarkWebhooksServiceProvider extends ServiceProvider
     {
         return [
             'middleware' => [
-                'api',
+                ...(array) config('postmark-webhooks.middleware', ['api']),
                 PostmarkIpsWhitelist::class,
             ],
         ];

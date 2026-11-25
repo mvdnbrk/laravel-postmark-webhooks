@@ -17,6 +17,8 @@ class PostmarkWebhookEventMappingTest extends TestCase
         parent::setUp();
 
         Event::fake();
+
+        $this->withHeaders(['REMOTE_ADDR' => '50.31.156.6']);
     }
 
     protected function validPayload(array $attributes = []): array

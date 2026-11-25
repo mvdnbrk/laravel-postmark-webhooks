@@ -146,4 +146,26 @@ class PostmarkWebhooksTest extends TestCase
         Event::assertNotDispatched(PostmarkWebhookCalled::class);
         Event::assertNotDispatched('webhook.postmark:*');
     }
+
+    #[Test]
+    public function posting_a_request_from_localhost_results_in_a_401(): void
+    {
+        $response = $this->withHeaders(['REMOTE_ADDR' => '127.0.0.1'])->postJson('/api/webhooks/postmark', $this->validPayload());
+
+        $response->assertStatus(401);
+
+        $this->assertCount(0, PostmarkWebhook::all());
+    }
+
+    #[Test]
+    public function the_ip_check_is_skipped_in_the_local_environment(): void
+    {
+        $this->app['env'] = 'local';
+
+        $response = $this->withHeaders(['REMOTE_ADDR' => '9.9.9.9'])->postJson('/api/webhooks/postmark', $this->validPayload());
+
+        $response->assertStatus(202);
+
+        $this->assertCount(1, PostmarkWebhook::all());
+    }
 }
