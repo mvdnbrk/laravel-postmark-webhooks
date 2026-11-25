@@ -14,7 +14,6 @@ class PostmarkIpsWhitelist
      * @var array
      */
     private $ips = [
-        '127.0.0.1',
         '3.134.147.250',
         '18.217.206.57',
         '50.31.156.6',
@@ -30,6 +29,10 @@ class PostmarkIpsWhitelist
      */
     public function handle($request, Closure $next)
     {
+        if (app()->environment('local')) {
+            return $next($request);
+        }
+
         if (collect($this->ips)->contains($request->getClientIp())) {
             return $next($request);
         }
