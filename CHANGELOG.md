@@ -4,6 +4,24 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
+## [v2.0.0] - Unreleased
+
+### Added
+- Added support for Laravel 12 and 13.
+- Added support for PHP 8.2, 8.3, 8.4 and 8.5.
+- Added support for PHPUnit 11 and 12.
+
+### Changed
+- Requires PHP 8.2 or higher.
+- Declared the `illuminate/database`, `illuminate/http` and `illuminate/routing` dependencies.
+- Documented the `subscription_change` event type.
+
+### Removed
+- Dropped support for Laravel 6 to 9.
+- Dropped support for PHP 7.2 to 8.1.
+
+Thanks [@it-can](https://github.com/it-can) for the earlier Laravel 10 and 11 work in [`#21`](https://github.com/mvdnbrk/laravel-postmark-webhooks/pull/21).
+
 ## [v1.7.0] - 2022-03-09
 
 ### Added
@@ -135,7 +153,8 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Initial release
 
-[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.7.0...HEAD
+[Unreleased]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.7.0...v2.0.0
 [v1.7.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.6.0...v1.7.0
 [v1.6.0]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.5.1...v1.6.0
 [v1.5.1]: https://github.com/mvdnbrk/laravel-postmark-webhooks/compare/v1.5.0...v1.5.1
