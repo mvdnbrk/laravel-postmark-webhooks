@@ -4,7 +4,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ## [Unreleased]
 
-## [v2.0.0] - Unreleased
+## [v2.0.0] - 2026-11-25
 
 ### Added
 - Added support for Laravel 12 and 13.
@@ -15,6 +15,11 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 - Requires PHP 8.2 or higher.
 - Declared the `illuminate/database`, `illuminate/http` and `illuminate/routing` dependencies.
 - Documented the `subscription_change` event type.
+- The IP check is skipped in the `local` environment.
+- Documented trusted proxies for apps behind a proxy.
+
+### Security
+- Requests from `127.0.0.1` are no longer allowed. Behind a proxy without trusted proxies set, every request came from `127.0.0.1` and passed the IP check.
 
 ### Removed
 - Dropped support for Laravel 6 to 9.
