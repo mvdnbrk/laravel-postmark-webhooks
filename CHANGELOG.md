@@ -8,6 +8,7 @@ All notable changes to `laravel-postmark-webhooks` will be documented in this fi
 
 ### Added
 - Added support for Laravel 12 and 13.
+- Added a `middleware` config key to change the middleware of the webhook route. [`#12`](https://github.com/mvdnbrk/laravel-postmark-webhooks/issues/12)
 - Added support for PHP 8.2, 8.3, 8.4 and 8.5.
 - Added support for PHPUnit 11 and 12.
 

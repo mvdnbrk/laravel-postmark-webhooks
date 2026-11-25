@@ -50,6 +50,9 @@ You are ready to receive webhook notifications from Postmark!
 > You may change the `/api/webhooks/postmark` endpoint to anything you like.  
 > You can do this by changing the `path` key in the `config/postmark-webhooks.php` file.
 
+> The route uses the `api` middleware group. You may change this with the `middleware` key in the same file.  
+> The check on Postmark's IP addresses is always added.
+
 ## Protection of your webhook
 
 This package protects your webhook automatically by only allowing requests from the [IP range](https://postmarkapp.com/support/article/800-ips-for-firewalls#webhooks) that Postmark uses.
