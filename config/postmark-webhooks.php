@@ -26,7 +26,7 @@ return [
     | logged to the database. You can place them under the except key.
     |
     | Supported event types: "open", "bounce", "click",
-    | "delivery", "spam_complaint"
+    | "delivery", "spam_complaint", "subscription_change"
     |
     */
 

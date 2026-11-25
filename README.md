@@ -1,7 +1,8 @@
-<p align="center"><a href="https://postmarkapp.com" target="_blank"><img src="https://postmarkapp.com/images/logo.svg" alt="Postmark Inbound" width="240" height="40"></a>
+<p align="center"><a href="https://postmarkapp.com" target="_blank"><img src="https://postmarkapp.com/images/logo.svg" alt="Postmark" width="240" height="40"></a>
 
 # Handle Postmark webhooks in a Laravel application
 
+![PHP version][ico-php-version]
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
 [![Tests][ico-tests]][link-tests]
@@ -13,18 +14,23 @@ This way Postmark is able to immediately notify you when something new occurs.
 
 This package can help you handle those webhooks.
 
+## Requirements
+
+- PHP 8.2 or higher
+- Laravel 12 or 13 (Laravel 13 requires PHP 8.3 or higher)
+
 ## Installation
 
 You can install the package via composer:
 
-``` bash
+```bash
 composer require mvdnbrk/laravel-postmark-webhooks
 ```
 
 This package will log all incoming webhooks to the database by default.  
 Run the migrations to create a `postmark_webhook_logs` table in the database:
 
-``` bash
+```bash
 php artisan migrate
 ```
 > If you want to disable database logging you can set `POSTMARK_WEBHOOKS_LOG_ENABLED=false` in your `.env` file. 
@@ -42,7 +48,7 @@ Pick the events Postmark should send to you and save the webhook.
 You are ready to receive webhook notifications from Postmark!
 
 > You may change the `/api/webhooks/postmark` endpoint to anything you like.  
-> You can do this by changing the `path` key in the `config/postmark-webooks.php` file.
+> You can do this by changing the `path` key in the `config/postmark-webhooks.php` file.
 
 ## Protection of your webhook
 
@@ -63,19 +69,14 @@ For example `SpamComplaint` will be saved as `spam_complaint`.
 ### Events
 
 Whenever a webhook call comes in, this package will fire a `PostmarkWebhookCalled` event.  
-You may register an event listener in the `EventServiceProvider`:
+Laravel discovers listeners in `app/Listeners` automatically by the event type-hint of their `handle` method.  
+You may also register a listener yourself in the `boot` method of your `AppServiceProvider`:
 
 ```php
-/**
- * The event listener mappings for the application.
- *
- * @var array
- */
-protected $listen = [
-    PostmarkWebhookCalled::class => [
-        YourListener::class,
-    ],
-];
+use Illuminate\Support\Facades\Event;
+use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
+
+Event::listen(PostmarkWebhookCalled::class, YourListener::class);
 ```
 
 Example of a listener:
@@ -89,13 +90,7 @@ use Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled;
 
 class YourListener
 {
-    /**
-     * Handle the event.
-     *
-     * @param  \Mvdnbrk\PostmarkWebhooks\Events\PostmarkWebhookCalled  $event
-     * @return void
-     */
-    public function handle(PostmarkWebhookCalled $event)
+    public function handle(PostmarkWebhookCalled $event): void
     {
         // Do your work here.
 
@@ -106,25 +101,19 @@ class YourListener
         // $event->recordType
     }
 }
-
 ```
 
 You may also register an event listener for a specific type of event:
 
 ```php
-/**
- * The event listener mappings for the application.
- *
- * @var array
- */
-protected $listen = [
-    'webhook.postmark: spam_complaint' => [
-        YourSpamComplaintListener::class,
-    ],
-];
+Event::listen('webhook.postmark: spam_complaint', YourSpamComplaintListener::class);
 ```
 
-Available events: `open`, `bounce`, `click`, `delivery`, `spam_complaint`.
+The listener receives the `PostmarkWebhookCalled` event as well.
+> A listener in `app/Listeners` with a `PostmarkWebhookCalled` type-hint is also discovered for every webhook.  
+> Keep listeners for a specific type outside `app/Listeners` to avoid running them twice.
+
+Available events: `open`, `bounce`, `click`, `delivery`, `spam_complaint`, `subscription_change`.
 
 ### Advanced configuration
 
@@ -156,7 +145,7 @@ You can map the events fired by this package to your own event classes:
 
 ```php
 'events' => [
-    'spam_complaint' => App\Events\SpamComplaint,
+    'spam_complaint' => App\Events\SpamComplaint::class,
     ...
 ],
 ```
@@ -167,13 +156,13 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Testing
 
-``` bash
-$ composer test
+```bash
+composer test
 ```
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md)  for details.
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 
 ## Security Vulnerabilities
 
@@ -184,15 +173,16 @@ Please review [our security policy](../../security/policy) on how to report secu
 - [Mark van den Broek][link-author]
 - [All Contributors][link-contributors]
 
-Inspired by [Laravel Stripe Webooks](https://github.com/spatie/laravel-stripe-webhooks) from [Spatie](https://spatie.be/).
+Inspired by [Laravel Stripe Webhooks](https://github.com/spatie/laravel-stripe-webhooks) from [Spatie](https://spatie.be/).
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
+[ico-php-version]: https://img.shields.io/packagist/php-v/mvdnbrk/laravel-postmark-webhooks?style=flat-square
 [ico-version]: https://img.shields.io/packagist/v/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-tests]: https://img.shields.io/github/workflow/status/mvdnbrk/laravel-postmark-webhooks/tests/main?label=tests&style=flat-square
+[ico-tests]: https://img.shields.io/github/actions/workflow/status/mvdnbrk/laravel-postmark-webhooks/tests.yml?branch=main&label=tests&style=flat-square
 [ico-style-ci]: https://styleci.io/repos/149487979/shield?branch=main
 [ico-downloads]: https://img.shields.io/packagist/dt/mvdnbrk/laravel-postmark-webhooks.svg?style=flat-square
 
